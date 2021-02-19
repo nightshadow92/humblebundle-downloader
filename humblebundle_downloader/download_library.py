@@ -139,6 +139,7 @@ class DownloadLibrary:
                     download['machine_name'],
                     web_name,
                 )
+                print(signed_url)
                 if signed_url is None:
                     # Failed to get signed url. Error logged in fn
                     continue
@@ -157,15 +158,7 @@ class DownloadLibrary:
                     )
                 else:
                     uploaded_at = None
-
-                self._process_download(
-                    product_r,
-                    cache_file_key,
-                    file_info,
-                    local_filename,
-                    rename_str=uploaded_at,
-                )
-
+                    
     def _get_trove_products(self):
         trove_products = []
         idx = 0
